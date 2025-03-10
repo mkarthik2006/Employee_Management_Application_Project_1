@@ -56,6 +56,10 @@ public class EmployeeController {
                 service.getAllEmployees() : service.searchEmployeesByName(keyword);
         model.addAttribute("employees", employees);
         model.addAttribute("totalPages", 1); // No pagination for search results
-        return "employees"; // Ensure this matches your Thymeleaf template
+        return "employees"; //
+    }
+    @GetMapping("/")
+    public String redirectToEmployees() {
+        return "redirect:/employees";
     }
 }
